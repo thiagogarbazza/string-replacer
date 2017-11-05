@@ -29,3 +29,8 @@ cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.sonar/cache'
+
+deploy:
+  skip_cleanup: true
+  on:
+    tags: true
