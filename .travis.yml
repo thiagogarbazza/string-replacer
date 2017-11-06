@@ -1,6 +1,5 @@
-language: java
 sudo: false
-
+language: java
 jdk:
   - oraclejdk8
 
@@ -9,6 +8,11 @@ addons:
     organization: "thiagogarbazza-github"
     token:
       secure: ${SONAR_TOKEN}
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
 
 before_install:
   - mvn clean
@@ -24,11 +28,6 @@ after_success:
   - echo -e ${GPG_IMPORT} > target/gpg.asc
   - gpg --fast-import target/gpg.asc
   - mvn deploy --settings artifacts/ci/maven-settings.xml
-  
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
 
 deploy:
   skip_cleanup: true
