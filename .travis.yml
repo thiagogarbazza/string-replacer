@@ -24,12 +24,12 @@ script:
   - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
   - mvn sonar:sonar
 
-after_success:
+before_deploy:
   - echo -e ${GPG_IMPORT} > target/gpg.asc
   - gpg --fast-import target/gpg.asc
-  - mvn deploy --settings artifacts/ci/maven-settings.xml
-
+  
 deploy:
   skip_cleanup: true
-  on:
-    tags: true
+  provider: script
+  script: mvn deploy --settings artifacts/ci/maven-settings.xml
+
