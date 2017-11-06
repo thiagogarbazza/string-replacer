@@ -29,7 +29,9 @@ before_deploy:
   - gpg --fast-import target/gpg.asc
   
 deploy:
-  skip_cleanup: true
   provider: script
   script: mvn deploy --settings artifacts/ci/maven-settings.xml
+  skip_cleanup: true
+  on:
+    tags: true
 
