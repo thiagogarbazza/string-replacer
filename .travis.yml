@@ -27,7 +27,7 @@ script:
 before_deploy:
   - echo -e ${GPG_IMPORT} > target/gpg.asc
   - gpg --fast-import target/gpg.asc
-  
+
 deploy:
   provider: script
   script: mvn deploy --settings artifacts/ci/maven-settings.xml

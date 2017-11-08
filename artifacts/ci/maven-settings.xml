@@ -25,5 +25,4 @@
       <password>${env.OSSRH_PASSWORD}</password>
     </server>
   </servers>
-
 </settings>
