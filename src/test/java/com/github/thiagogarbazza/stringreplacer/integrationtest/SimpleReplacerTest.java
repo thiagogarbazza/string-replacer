@@ -17,6 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class SimpleReplacerTest {
 
   private static final UserVO DATA = buildThiagoGarbazza();
+
   @Rule
   public ExpectedException expectedException = ExpectedException.none();
   private StringReplacer stringReplacer;

@@ -13,6 +13,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
   private static final String ARGS_SEPARATOR = ",";
   private static final String GROUP_ARGS = "args";
   private static final String GROUP_TOKEN = "token";
+
   private final StringBuffer buffer;
   private final Matcher matcher;
   private final OutputType type;
@@ -68,7 +69,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
     }
 
     public void setResult(Result result) {
-      replace(result.output(type));
+      replace(result.output(type, token));
     }
   }
 }
