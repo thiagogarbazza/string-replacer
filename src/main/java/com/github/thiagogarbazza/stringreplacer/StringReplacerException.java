@@ -2,11 +2,11 @@ package com.github.thiagogarbazza.stringreplacer;
 
 public class StringReplacerException extends RuntimeException {
 
-  public StringReplacerException(String key) {
-    super(key);
+  public StringReplacerException(String message) {
+    super(message);
   }
 
-  public StringReplacerException(String key, Throwable cause) {
-    super(key, cause);
+  public StringReplacerException(String message, Throwable cause) {
+    super(message, cause);
   }
 }
