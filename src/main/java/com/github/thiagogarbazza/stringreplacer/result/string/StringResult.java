@@ -17,7 +17,7 @@ public class StringResult implements Result {
   }
 
   @Override
-  public String output(final OutputType type) {
+  public String output(final OutputType type, final String token) {
     return this.value;
   }
 }
