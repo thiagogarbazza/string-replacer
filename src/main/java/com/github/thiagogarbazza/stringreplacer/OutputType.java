@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.result;
+package com.github.thiagogarbazza.stringreplacer;
 
 public enum OutputType {
   HTML,

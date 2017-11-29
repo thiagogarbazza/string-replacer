@@ -1,6 +1,6 @@
 package com.github.thiagogarbazza.stringreplacer.impl;
 
-import com.github.thiagogarbazza.stringreplacer.result.OutputType;
+import com.github.thiagogarbazza.stringreplacer.OutputType;
 import com.github.thiagogarbazza.stringreplacer.result.Result;
 import lombok.Getter;
 

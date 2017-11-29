@@ -10,8 +10,8 @@ import org.junit.rules.ExpectedException;
 
 import java.util.regex.Pattern;
 
+import static com.github.thiagogarbazza.stringreplacer.OutputType.PLAIN_TEXT;
 import static com.github.thiagogarbazza.stringreplacer.integrationtest.data.UserVO.buildThiagoGarbazza;
-import static com.github.thiagogarbazza.stringreplacer.result.OutputType.PLAIN_TEXT;
 import static org.junit.Assert.assertEquals;
 
 public class ChangePatternReplacerTest {

@@ -1,6 +1,6 @@
 package com.github.thiagogarbazza.stringreplacer.result.string;
 
-import com.github.thiagogarbazza.stringreplacer.result.OutputType;
+import com.github.thiagogarbazza.stringreplacer.OutputType;
 import com.github.thiagogarbazza.stringreplacer.result.Result;
 
 public class StringResult implements Result {
