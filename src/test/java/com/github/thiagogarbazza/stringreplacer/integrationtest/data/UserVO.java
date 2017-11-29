@@ -22,12 +22,14 @@ public class UserVO {
   private String email;
   private String id;
   private String name;
+  private String phone;
 
   public static UserVO buildHanSolo() {
     UserVO user = UserVO.builder()
         .id("be0f7d66-1d0e-4089-9ec9-55c85f96a831")
         .name("Han Solo")
         .email("solo.han@starwars.com")
+      .phone("+55 31 9 1111-1111")
         .creationDate(new GregorianCalendar(1950, OCTOBER, 25, 13, 15, 34))
         .build();
 
@@ -39,6 +41,7 @@ public class UserVO {
         .id("cf77b71e-5275-490c-b64f-9b78ff94785a")
         .name("Luke Skywalker")
         .email("skywalker.luke@starwars.com")
+      .phone("+55 31 9 2222-2222")
         .creationDate(new GregorianCalendar(1970, MAY, 4, 7, 53, 18))
         .build();
 
@@ -50,6 +53,7 @@ public class UserVO {
         .id("66477f01-8a9c-4668-8c4f-95108dba5c16")
         .name("Mace Windu")
         .email("windu.mace@starwars.com")
+      .phone("+55 31 9 3333-3333")
         .creationDate(new GregorianCalendar(1923, JANUARY, 1, 6, 32, 48))
         .build();
 
@@ -61,6 +65,7 @@ public class UserVO {
         .id("a3381700-d485-4648-8549-829c4b036005")
         .name("Thiago Garbazza")
         .email("thiagogarbazza@gmail.com")
+      .phone("+55 31 9 9999-9999")
         .creationDate(new GregorianCalendar(1984, JULY, 20, 5, 45, 00))
         .build();
 
