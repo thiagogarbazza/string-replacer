@@ -21,13 +21,13 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
     <dependency.junit.version>4.12</dependency.junit.version>
-    <dependency.lombok.version>1.16.18</dependency.lombok.version>
+    <dependency.lombok.version>1.18.4</dependency.lombok.version>
 
     <plugin.deploy.version>2.8.2</plugin.deploy.version>
     <plugin.compiler.version>3.7.0</plugin.compiler.version>
     <plugin.gpg.version>1.6</plugin.gpg.version>
     <plugin.sonatype-staging.version>1.6.8</plugin.sonatype-staging.version>
-    <plugin.lombok.version>1.16.18.1</plugin.lombok.version>
+    <plugin.lombok.version>1.18.4.0</plugin.lombok.version>
     <plugin.release.version>2.5.3</plugin.release.version>
   </properties>
 
