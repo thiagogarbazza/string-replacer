@@ -1,10 +1,10 @@
 package com.github.thiagogarbazza.stringreplacer.impl;
 
-import com.github.thiagogarbazza.stringreplacer.OutputType;
-import com.github.thiagogarbazza.stringreplacer.result.Result;
 import lombok.Getter;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,12 +16,12 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
 
   private final StringBuffer buffer;
   private final Matcher matcher;
-  private final OutputType type;
+  private final Pattern patternArgs;
 
-  public Expressions(Pattern pattern, String text, final OutputType type) {
+  public Expressions(final Pattern pattern, Pattern patternArgs, String text) {
+    this.patternArgs = patternArgs;
     this.buffer = new StringBuffer();
     this.matcher = pattern.matcher(text);
-    this.type = type;
   }
 
   @Override
@@ -31,10 +31,18 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
 
   @Override
   public Expression next() {
-    String token = matcher.group(GROUP_TOKEN);
-    String args = matcher.group(GROUP_ARGS);
+    final String token = matcher.group(GROUP_TOKEN);
+    final String args = matcher.group(GROUP_ARGS);
+    final HashMap<String, String> argss = new HashMap<>();
 
-    return new Expression(token, args == null ? null : args.split(ARGS_SEPARATOR));
+    if(args != null) {
+      final Matcher matcherArgs = patternArgs.matcher(matcher.group(GROUP_ARGS));
+      while (matcherArgs.find()) {
+        argss.put(matcherArgs.group("key"), matcherArgs.group("value"));
+      }
+    }
+
+    return new Expression(token, argss);
   }
 
   @Override
@@ -60,16 +68,16 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
   @Getter
   class Expression {
 
-    private final String[] args;
+    private final Map<String, String> args;
     private final String token;
 
-    private Expression(final String token, final String[] args) {
+    private Expression(final String token, final Map<String, String> args) {
       this.token = token;
       this.args = args;
     }
 
-    public void setResult(Result result) {
-      replace(result.output(type, token));
+    public void setResult(String result) {
+      replace(result);
     }
   }
 }

@@ -1,12 +1,10 @@
-package com.github.thiagogarbazza.stringreplacer.ti;
+package com.github.thiagogarbazza.stringreplacer.ta;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-@Ignore("Specifying")
-public class SimpleBooleanReplacerIntegrationTest {
+public class SimpleBooleanReplacerIntegrationTest extends AbstractTestIntegration {
 
   @Test
   public void vefiryNoParameterUsage() {
@@ -18,7 +16,7 @@ public class SimpleBooleanReplacerIntegrationTest {
 
   @Test
   public void vefiryWithParameterUsage() {
-    String templateText = "Simple example ${simple-boolean | format: 'upper'}!";
+    String templateText = "Simple example ${simple-boolean | case: 'upper'}!";
     String expected = "Simple example TRUE!";
 
     assertEquals(expected, replacer(templateText));
@@ -26,13 +24,9 @@ public class SimpleBooleanReplacerIntegrationTest {
 
   @Test
   public void vefiryWithUseOfParameters() {
-    String templateText = "Simple example ${simple-boolean | true-text: 'Yes', false-text 'No'}!";
-    String expected = "Simple example Yes!";
+    String templateText = "Simple example ${simple-boolean | true-text: 'yes', false-text: 'no'}!";
+    String expected = "Simple example yes!";
 
     assertEquals(expected, replacer(templateText));
-  }
-
-  private String replacer(final String templateText) {
-    return null;
   }
 }

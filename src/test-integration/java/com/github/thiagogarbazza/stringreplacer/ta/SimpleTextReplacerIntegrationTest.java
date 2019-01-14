@@ -1,12 +1,10 @@
-package com.github.thiagogarbazza.stringreplacer.ti;
+package com.github.thiagogarbazza.stringreplacer.ta;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-@Ignore("Specifying")
-public class SimpleTextReplacerIntegrationTest {
+public class SimpleTextReplacerIntegrationTest extends AbstractTestIntegration {
 
   @Test
   public void vefiryNoParameterUsage() {
@@ -18,7 +16,7 @@ public class SimpleTextReplacerIntegrationTest {
 
   @Test
   public void vefiryWithParameterUsage() {
-    String templateText = "Simple example ${simple-text | format: 'upper'}!";
+    String templateText = "Simple example ${simple-text | case: 'upper'}!";
     String expected = "Simple example ANY TEXT!";
 
     assertEquals(expected, replacer(templateText));
@@ -26,13 +24,9 @@ public class SimpleTextReplacerIntegrationTest {
 
   @Test
   public void vefiryWithUseOfParameters() {
-    String templateText = "Simple example ${simple-text | format: 'UPPER', space-to-underscored: 'true'}!";
-    String expected = "Simple example ANY_TEXT";
+    String templateText = "Simple example ${simple-text | case: 'UPPER', space-to-underscored: 'true'}!";
+    String expected = "Simple example ANY_TEXT!";
 
     assertEquals(expected, replacer(templateText));
-  }
-
-  private String replacer(final String templateText) {
-    return null;
   }
 }

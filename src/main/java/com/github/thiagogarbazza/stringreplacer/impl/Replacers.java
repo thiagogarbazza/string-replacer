@@ -8,9 +8,9 @@ import java.util.TreeMap;
 
 import static com.github.thiagogarbazza.stringreplacer.impl.ResourceBundleUtils.property;
 
-class StringReplacerMap extends TreeMap<String, Replacer> {
+class Replacers extends TreeMap<String, Replacer> {
 
-  public <T extends Replacer> StringReplacerMap(final Collection<T> replacers) {
+  public <T extends Replacer> Replacers(final Collection<T> replacers) {
     super();
 
     for (Replacer replacer : replacers) {

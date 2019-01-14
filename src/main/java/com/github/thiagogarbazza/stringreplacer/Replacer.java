@@ -1,10 +1,10 @@
 package com.github.thiagogarbazza.stringreplacer;
 
-import com.github.thiagogarbazza.stringreplacer.result.Result;
+import java.util.Map;
 
 public interface Replacer<T extends Object> {
 
   String fromToken();
 
-  Result toReplace(T data, String[] args);
+  String toReplace(T data, Map<String, String> args);
 }
