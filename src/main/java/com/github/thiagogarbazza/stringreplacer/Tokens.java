@@ -15,9 +15,11 @@ class Tokens {
 
   private final StringBuffer buffer;
   private final Matcher matcher;
+  private final String originalText;
   private final Pattern patternArgs;
 
   public Tokens(final Pattern pattern, Pattern patternArgs, String text) {
+    this.originalText = text;
     this.buffer = new StringBuffer();
     this.patternArgs = patternArgs;
     this.matcher = pattern.matcher(text);
@@ -39,7 +41,7 @@ class Tokens {
       }
     }
 
-    return new Token(token, argss);
+    return new Token(this.originalText.substring(matcher.start(), matcher.end()), token, argss);
   }
 
   public String result() {
@@ -53,13 +55,15 @@ class Tokens {
   }
 
   @Getter
-  @ToString(of = {"name", "args"})
+  @ToString(of = {"full"})
   class Token {
 
+    private final String full;
     private final Map<String, String> args;
     private final String name;
 
-    private Token(final String name, final Map<String, String> args) {
+    private Token(final String full, final String name, final Map<String, String> args) {
+      this.full = full;
       this.name = name;
       this.args = args;
     }

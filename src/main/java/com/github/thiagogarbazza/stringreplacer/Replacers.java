@@ -3,7 +3,7 @@ package com.github.thiagogarbazza.stringreplacer;
 import java.util.Collection;
 import java.util.Map;
 
-public class Replacers {
+class Replacers {
 
   private final Collection<? extends Replacer> replacers;
 
