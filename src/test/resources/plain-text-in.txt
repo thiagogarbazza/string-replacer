@@ -1,1 +1,0 @@
-Prezado senhor {{user.name}},
