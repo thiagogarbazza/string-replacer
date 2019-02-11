@@ -62,7 +62,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
   }
 
   void replace(String value) {
-    matcher.appendReplacement(buffer, value);
+    matcher.appendReplacement(buffer, Matcher.quoteReplacement(value));
   }
 
   @Getter
