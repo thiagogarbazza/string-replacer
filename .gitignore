@@ -20,6 +20,9 @@ out/
 *.ear
 *.ser
 *.ec
+**.tokens
+**.releaseBackup
+release.properties
 
 # OS files
 #############################
