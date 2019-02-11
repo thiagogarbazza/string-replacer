@@ -23,7 +23,7 @@ class Replacers extends TreeMap<String, Replacer> {
     final Replacer replacer = super.get(token);
 
     if (replacer == null) {
-      throw new StringReplacerException(property("string-replacer.replacer-not-found", token));
+      throw new StringReplacerException(property("string-replacer.validation.replacer.not-found", token));
     }
 
     return replacer;
