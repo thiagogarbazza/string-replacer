@@ -17,18 +17,19 @@ class StringReplacerImpl implements StringReplacer {
 
   @Override
   public String replace(final String text, final Object data) {
-    final Expressions expressions = new Expressions(pattern, patternArgs, text);
+    final Tokens tokens = new Tokens(pattern, patternArgs, text);
 
-    for (Expressions.Expression expression : expressions) {
-      final Replacer replacer = replacers.find(expression.getToken(), expression.getArgs(), data);
+    while (tokens.hasNext()) {
+      Tokens.Token token = tokens.next();
+      final Replacer replacer = replacers.find(token.getName(), token.getArgs(), data);
 
       if (replacer != null) {
-        final String result = replacer.toReplace(expression.getArgs(), data);
+        final String result = replacer.toReplace(token.getArgs(), data);
 
-        expression.setResult(result);
+        token.setResult(result);
       }
     }
 
-    return expressions.result();
+    return tokens.result();
   }
 }

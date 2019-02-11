@@ -4,34 +4,31 @@ import lombok.Getter;
 import lombok.ToString;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressions.Expression> {
+class Tokens {
 
   private static final String GROUP_ARGS = "args";
-  private static final String GROUP_TOKEN = "token";
+  private static final String GROUP_TOKEN_NAME = "tokenName";
 
   private final StringBuffer buffer;
   private final Matcher matcher;
   private final Pattern patternArgs;
 
-  public Expressions(final Pattern pattern, Pattern patternArgs, String text) {
+  public Tokens(final Pattern pattern, Pattern patternArgs, String text) {
     this.patternArgs = patternArgs;
     this.buffer = new StringBuffer();
     this.matcher = pattern.matcher(text);
   }
 
-  @Override
   public boolean hasNext() {
     return matcher.find();
   }
 
-  @Override
-  public Expression next() {
-    final String token = matcher.group(GROUP_TOKEN);
+  public Token next() {
+    final String token = matcher.group(GROUP_TOKEN_NAME);
     final String args = matcher.group(GROUP_ARGS);
     final HashMap<String, String> argss = new HashMap<>();
 
@@ -42,17 +39,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
       }
     }
 
-    return new Expression(token, argss);
-  }
-
-  @Override
-  public void remove() {
-    throw new UnsupportedOperationException("remove");
-  }
-
-  @Override
-  public Iterator<Expression> iterator() {
-    return this;
+    return new Token(token, argss);
   }
 
   public String result() {
@@ -66,18 +53,18 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
   }
 
   @Getter
-  @ToString(of = {"token", "args"})
-  class Expression {
+  @ToString(of = {"name", "args"})
+  class Token {
 
     private final Map<String, String> args;
-    private final String token;
+    private final String name;
 
-    private Expression(final String token, final Map<String, String> args) {
-      this.token = token;
+    private Token(final String name, final Map<String, String> args) {
+      this.name = name;
       this.args = args;
     }
 
-    public void setResult(String result) {
+    void setResult(String result) {
       replace(result);
     }
   }

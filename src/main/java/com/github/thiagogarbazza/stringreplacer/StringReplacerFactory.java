@@ -10,7 +10,7 @@ import static java.util.regex.Pattern.compile;
 @UtilityClass
 public class StringReplacerFactory {
 
-  private static final Pattern PATTERN_DEFAULT = compile("\\$\\{[\\s]*?(?<token>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>.*))?[\\s]*?}");
+  private static final Pattern PATTERN_DEFAULT = compile("\\$\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>.*))?[\\s]*?}");
   private static final Pattern PATTERN_DEFAULT_ARGS = compile("(?<key>[\\w\\d-_]*)[\\s]*?:[\\s]*?'(?<value>[^']*)'");
 
   public static StringReplacer newStringReplacer(Collection<? extends Replacer> replacers) {
