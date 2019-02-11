@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.ta.replacers;
+package com.github.thiagogarbazza.stringreplacer.it.replacers;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

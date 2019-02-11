@@ -1,7 +1,6 @@
-package com.github.thiagogarbazza.stringreplacer.ta.replacers;
+package com.github.thiagogarbazza.stringreplacer.it.replacers;
 
 import com.github.thiagogarbazza.stringreplacer.Replacer;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
 

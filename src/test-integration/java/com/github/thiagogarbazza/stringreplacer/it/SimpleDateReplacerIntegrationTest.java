@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.ta;
+package com.github.thiagogarbazza.stringreplacer.it;
 
 import org.junit.Test;
 

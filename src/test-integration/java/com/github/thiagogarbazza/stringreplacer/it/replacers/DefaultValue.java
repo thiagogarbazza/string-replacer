@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.ta.replacers;
+package com.github.thiagogarbazza.stringreplacer.it.replacers;
 
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.BooleanUtils;

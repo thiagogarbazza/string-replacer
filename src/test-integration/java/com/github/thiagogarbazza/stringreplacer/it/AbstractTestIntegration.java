@@ -1,13 +1,13 @@
-package com.github.thiagogarbazza.stringreplacer.ta;
+package com.github.thiagogarbazza.stringreplacer.it;
 
 import com.github.thiagogarbazza.stringreplacer.Replacer;
 import com.github.thiagogarbazza.stringreplacer.StringReplacer;
 import com.github.thiagogarbazza.stringreplacer.impl.StringReplacerFactory;
-import com.github.thiagogarbazza.stringreplacer.ta.replacers.DataProcessor;
-import com.github.thiagogarbazza.stringreplacer.ta.replacers.SimpleBooleanReplacer;
-import com.github.thiagogarbazza.stringreplacer.ta.replacers.SimpleDateReplacer;
-import com.github.thiagogarbazza.stringreplacer.ta.replacers.SimpleNumberReplacer;
-import com.github.thiagogarbazza.stringreplacer.ta.replacers.SimpleTextReplacer;
+import com.github.thiagogarbazza.stringreplacer.it.replacers.DataProcessor;
+import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleBooleanReplacer;
+import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleDateReplacer;
+import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleNumberReplacer;
+import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleTextReplacer;
 
 import java.math.BigDecimal;
 import java.util.Collection;

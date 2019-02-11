@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.ta.replacers;
+package com.github.thiagogarbazza.stringreplacer.it.replacers;
 
 import com.github.thiagogarbazza.stringreplacer.Replacer;
 
@@ -9,7 +9,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.github.thiagogarbazza.stringreplacer.ta.replacers.DefaultValue.defaultValue;
+import static com.github.thiagogarbazza.stringreplacer.it.replacers.DefaultValue.defaultValue;
 
 public class SimpleNumberReplacer implements Replacer<DataProcessor> {
 

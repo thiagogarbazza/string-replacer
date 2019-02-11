@@ -1,10 +1,10 @@
-package com.github.thiagogarbazza.stringreplacer.ta.replacers;
+package com.github.thiagogarbazza.stringreplacer.it.replacers;
 
 import com.github.thiagogarbazza.stringreplacer.Replacer;
 
 import java.util.Map;
 
-import static com.github.thiagogarbazza.stringreplacer.ta.replacers.DefaultValue.defaultValue;
+import static com.github.thiagogarbazza.stringreplacer.it.replacers.DefaultValue.defaultValue;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.upperCase;
 
