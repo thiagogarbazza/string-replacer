@@ -18,8 +18,8 @@ class Tokens {
   private final Pattern patternArgs;
 
   public Tokens(final Pattern pattern, Pattern patternArgs, String text) {
-    this.patternArgs = patternArgs;
     this.buffer = new StringBuffer();
+    this.patternArgs = patternArgs;
     this.matcher = pattern.matcher(text);
   }
 
