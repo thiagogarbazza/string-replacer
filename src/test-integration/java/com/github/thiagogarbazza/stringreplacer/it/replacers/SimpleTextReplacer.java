@@ -10,12 +10,12 @@ import static org.apache.commons.lang3.StringUtils.upperCase;
 public class SimpleTextReplacer implements Replacer<DataProcessor> {
 
   @Override
-  public String fromToken() {
-    return "simple-text";
+  public boolean fromToken(final String token, final Map<String, String> args, final DataProcessor data) {
+    return "simple-text".equals(token);
   }
 
   @Override
-  public String toReplace(final DataProcessor data, final Map<String, String> args) {
+  public String toReplace(final Map<String, String> args, final DataProcessor data) {
     final boolean spaceToUnderscored = DefaultValue.defaultValue(args.get("space-to-underscored"), false);
     final String textCase = upperCase(args.get("case"));
 

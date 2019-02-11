@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface Replacer<T extends Object> {
 
-  String fromToken();
+  boolean fromToken(String token, Map<String, String> args, T data);
 
-  String toReplace(T data, Map<String, String> args);
+  String toReplace(Map<String, String> args, T data);
 }

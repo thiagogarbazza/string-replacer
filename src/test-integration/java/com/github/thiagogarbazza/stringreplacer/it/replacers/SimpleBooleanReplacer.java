@@ -11,12 +11,12 @@ import static org.apache.commons.lang3.StringUtils.upperCase;
 public class SimpleBooleanReplacer implements Replacer<DataProcessor> {
 
   @Override
-  public String fromToken() {
-    return "simple-boolean";
+  public boolean fromToken(final String token, final Map<String, String> args, final DataProcessor data) {
+    return "simple-boolean".equals(token);
   }
 
   @Override
-  public String toReplace(final DataProcessor data, final Map<String, String> args) {
+  public String toReplace(final Map<String, String> args, final DataProcessor data) {
     final String text = data.getABoolean()
       ? defaultValue(args.get("true-text"), "true")
       : defaultValue(args.get("false-text"), "false");

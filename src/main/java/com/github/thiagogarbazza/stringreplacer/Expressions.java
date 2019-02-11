@@ -1,6 +1,7 @@
 package com.github.thiagogarbazza.stringreplacer;
 
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -10,7 +11,6 @@ import java.util.regex.Pattern;
 
 class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressions.Expression> {
 
-  private static final String ARGS_SEPARATOR = ",";
   private static final String GROUP_ARGS = "args";
   private static final String GROUP_TOKEN = "token";
 
@@ -47,7 +47,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
 
   @Override
   public void remove() {
-    throw new UnsupportedOperationException("");
+    throw new UnsupportedOperationException("remove");
   }
 
   @Override
@@ -66,6 +66,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
   }
 
   @Getter
+  @ToString(of = {"token", "args"})
   class Expression {
 
     private final Map<String, String> args;

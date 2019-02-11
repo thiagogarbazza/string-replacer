@@ -1,28 +1,23 @@
 package com.github.thiagogarbazza.stringreplacer;
 
 import java.util.Collection;
-import java.util.TreeMap;
+import java.util.Map;
 
-import static com.github.thiagogarbazza.stringreplacer.ResourceBundleUtils.property;
+public class Replacers {
 
-class Replacers extends TreeMap<String, Replacer> {
+  private final Collection<? extends Replacer> replacers;
 
-  public <T extends Replacer> Replacers(final Collection<T> replacers) {
-    super();
-
-    for (Replacer replacer : replacers) {
-      this.put(replacer.fromToken(), replacer);
-    }
+  public Replacers(final Collection<? extends Replacer> replacers) {
+    this.replacers = replacers;
   }
 
-  @Override
-  public Replacer get(final Object token) {
-    final Replacer replacer = super.get(token);
-
-    if (replacer == null) {
-      throw new StringReplacerException(property("string-replacer.validation.replacer.not-found", token));
+  public Replacer find(final String token, final Map<String, String> args, final Object data) {
+    for (final Replacer replacer : this.replacers) {
+      if (replacer.fromToken(token, args, data)) {
+        return replacer;
+      }
     }
 
-    return replacer;
+    return null;
   }
 }

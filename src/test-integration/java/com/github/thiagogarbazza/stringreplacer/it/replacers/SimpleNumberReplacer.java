@@ -14,12 +14,12 @@ import static com.github.thiagogarbazza.stringreplacer.it.replacers.DefaultValue
 public class SimpleNumberReplacer implements Replacer<DataProcessor> {
 
   @Override
-  public String fromToken() {
-    return "simple-number";
+  public boolean fromToken(final String token, final Map<String, String> args, final DataProcessor data) {
+    return "simple-number".equals(token);
   }
 
   @Override
-  public String toReplace(final DataProcessor data, final Map<String, String> args) {
+  public String toReplace(final Map<String, String> args, final DataProcessor data) {
     final DecimalFormat decimalFormat = new DecimalFormat(defaultValue(args.get("format"), "#,##0"), new DecimalFormatSymbols(Locale.ENGLISH));
 
     final String roundingMode = args.get("rounding-mode");

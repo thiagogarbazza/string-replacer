@@ -9,12 +9,12 @@ import java.util.Map;
 public class SimpleDateReplacer implements Replacer<DataProcessor> {
 
   @Override
-  public String fromToken() {
-    return "simple-date";
+  public boolean fromToken(final String token, final Map<String, String> args, final DataProcessor data) {
+    return "simple-date".equals(token);
   }
 
   @Override
-  public String toReplace(final DataProcessor data, final Map<String, String> args) {
+  public String toReplace(final Map<String, String> args, final DataProcessor data) {
     final Calendar aDate = data.getADate();
 
     final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DefaultValue.defaultValue(args.get("format"), "yyyy-MM-dd"));
