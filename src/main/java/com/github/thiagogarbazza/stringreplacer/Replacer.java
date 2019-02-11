@@ -2,7 +2,7 @@ package com.github.thiagogarbazza.stringreplacer;
 
 import java.util.Map;
 
-public interface Replacer<T extends Object> {
+public interface Replacer<T> {
 
   boolean fromToken(String token, Map<String, String> args, T data);
 
