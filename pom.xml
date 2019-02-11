@@ -34,6 +34,8 @@
     <plugin.lombok.version>1.18.4.0</plugin.lombok.version>
     <plugin.release.version>2.5.3</plugin.release.version>
     <plugin.surefire.version>2.22.1</plugin.surefire.version>
+
+    <sonar.coverage.exclusions>**/StringReplacerException.java</sonar.coverage.exclusions>
   </properties>
 
   <developers>
