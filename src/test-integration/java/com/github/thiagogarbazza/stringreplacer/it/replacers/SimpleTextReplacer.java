@@ -23,7 +23,6 @@ public class SimpleTextReplacer implements Replacer<DataProcessor> {
       ? data.getAText()
       : data.getAText().replace(" ", "_");
 
-
     if (isNotBlank(textCase)) {
       return Case.valueOf(textCase).parser(text);
     }

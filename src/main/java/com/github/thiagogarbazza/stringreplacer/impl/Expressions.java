@@ -35,7 +35,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
     final String args = matcher.group(GROUP_ARGS);
     final HashMap<String, String> argss = new HashMap<>();
 
-    if(args != null) {
+    if (args != null) {
       final Matcher matcherArgs = patternArgs.matcher(matcher.group(GROUP_ARGS));
       while (matcherArgs.find()) {
         argss.put(matcherArgs.group("key"), matcherArgs.group("value"));
