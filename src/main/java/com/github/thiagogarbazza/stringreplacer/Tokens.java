@@ -58,8 +58,8 @@ class Tokens {
   @ToString(of = {"full"})
   class Token {
 
-    private final String full;
     private final Map<String, String> args;
+    private final String full;
     private final String name;
 
     private Token(final String full, final String name, final Map<String, String> args) {
