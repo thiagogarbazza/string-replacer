@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.impl;
+package com.github.thiagogarbazza.stringreplacer;
 
 import lombok.Getter;
 
@@ -47,7 +47,7 @@ class Expressions implements Iterator<Expressions.Expression>, Iterable<Expressi
 
   @Override
   public void remove() {
-    // Do nothing here...
+    throw new UnsupportedOperationException("");
   }
 
   @Override

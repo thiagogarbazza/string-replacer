@@ -1,12 +1,9 @@
-package com.github.thiagogarbazza.stringreplacer.impl;
-
-import com.github.thiagogarbazza.stringreplacer.Replacer;
-import com.github.thiagogarbazza.stringreplacer.StringReplacerException;
+package com.github.thiagogarbazza.stringreplacer;
 
 import java.util.Collection;
 import java.util.TreeMap;
 
-import static com.github.thiagogarbazza.stringreplacer.impl.ResourceBundleUtils.property;
+import static com.github.thiagogarbazza.stringreplacer.ResourceBundleUtils.property;
 
 class Replacers extends TreeMap<String, Replacer> {
 

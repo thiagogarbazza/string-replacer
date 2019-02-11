@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.impl;
+package com.github.thiagogarbazza.stringreplacer;
 
 import lombok.experimental.UtilityClass;
 

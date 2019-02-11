@@ -1,7 +1,5 @@
-package com.github.thiagogarbazza.stringreplacer.impl;
+package com.github.thiagogarbazza.stringreplacer;
 
-import com.github.thiagogarbazza.stringreplacer.Replacer;
-import com.github.thiagogarbazza.stringreplacer.StringReplacer;
 import lombok.experimental.UtilityClass;
 
 import java.util.Collection;

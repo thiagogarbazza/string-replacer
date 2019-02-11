@@ -2,7 +2,7 @@ package com.github.thiagogarbazza.stringreplacer.it;
 
 import com.github.thiagogarbazza.stringreplacer.Replacer;
 import com.github.thiagogarbazza.stringreplacer.StringReplacer;
-import com.github.thiagogarbazza.stringreplacer.impl.StringReplacerFactory;
+import com.github.thiagogarbazza.stringreplacer.StringReplacerFactory;
 import com.github.thiagogarbazza.stringreplacer.it.replacers.DataProcessor;
 import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleBooleanReplacer;
 import com.github.thiagogarbazza.stringreplacer.it.replacers.SimpleDateReplacer;

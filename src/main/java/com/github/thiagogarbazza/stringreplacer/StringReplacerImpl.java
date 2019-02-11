@@ -1,7 +1,4 @@
-package com.github.thiagogarbazza.stringreplacer.impl;
-
-import com.github.thiagogarbazza.stringreplacer.Replacer;
-import com.github.thiagogarbazza.stringreplacer.StringReplacer;
+package com.github.thiagogarbazza.stringreplacer;
 
 import java.util.Collection;
 import java.util.regex.Pattern;
