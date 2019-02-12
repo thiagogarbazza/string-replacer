@@ -21,7 +21,6 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
     <dependency.commons-lang.version>3.8.1</dependency.commons-lang.version>
-    <dependency.commons-logging.version>1.2</dependency.commons-logging.version>
     <dependency.junit.version>4.12</dependency.junit.version>
     <dependency.lombok.version>1.18.4</dependency.lombok.version>
 
@@ -70,11 +69,6 @@
   </issueManagement>
 
   <dependencies>
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>${dependency.commons-logging.version}</version>
-    </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
