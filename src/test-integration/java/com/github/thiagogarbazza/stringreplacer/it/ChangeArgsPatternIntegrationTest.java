@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class ChangeArgsPatternIntegrationTest extends AbstractTestIntegration {
 
   private static final String NEW_PATTERN_ARGS = "(?<key>[\\w\\d-_]*)[\\s]*?==[\\s]*?'(?<value>[^']*)'";
-  private static final String NEW_PATTERN_TOKEN = "@\\{\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>.*))?[\\s]*?}}";
+  private static final String NEW_PATTERN_TOKEN = "@\\{\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>[^}]*))?[\\s]*?}}";
   private StringReplacer stringReplacer;
 
   @Before

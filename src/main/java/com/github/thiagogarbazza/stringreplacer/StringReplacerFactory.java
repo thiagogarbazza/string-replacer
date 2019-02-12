@@ -11,7 +11,7 @@ import static java.util.regex.Pattern.compile;
 public class StringReplacerFactory {
 
   private static final Pattern PATTERN_DEFAULT_ARGS = compile("(?<key>[\\w\\d-_]*)[\\s]*?:[\\s]*?'(?<value>[^']*)'");
-  private static final Pattern PATTERN_DEFAULT_TOKEN = compile("\\$\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>.*))?[\\s]*?}");
+  private static final Pattern PATTERN_DEFAULT_TOKEN = compile("\\$\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>[^}]*))?[\\s]*?}");
 
   public static StringReplacer newStringReplacer(final Collection<? extends Replacer> replacers) {
     return newStringReplacer(replacers, PATTERN_DEFAULT_TOKEN);

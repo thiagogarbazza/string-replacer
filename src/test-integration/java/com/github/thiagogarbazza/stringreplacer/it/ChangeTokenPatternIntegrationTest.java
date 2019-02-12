@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ChangeTokenPatternIntegrationTest extends AbstractTestIntegration {
 
-  private static final String NEW_PATTERN_TOKEN = "@\\{\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>.*))?[\\s]*?}}";
+  private static final String NEW_PATTERN_TOKEN = "@\\{\\{[\\s]*?(?<tokenName>[\\w.-]+)([\\s]*?[|][\\s]*(?<args>[^}]*))?[\\s]*?}}";
   private StringReplacer stringReplacer;
 
   @Before
