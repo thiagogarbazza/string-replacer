@@ -9,8 +9,8 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>String replacer</name>
-  <description>A library to replace tokens within a string by values.</description>
-  <url>https://thiagogarbazza.github.io/string-replacer/</url>
+  <description>Is a java library for dealing replace tokens within a string by values.</description>
+  <url>https://github.com/thiagogarbazza/string-replacer</url>
 
   <properties>
     <java.version>1.7</java.version>
@@ -47,7 +47,7 @@
   <licenses>
     <license>
       <name>MIT License</name>
-      <url>https://github.com/thiagogarbazza/string-replacer/blob/master/LICENSE</url>
+      <url>https://github.com/thiagogarbazza/string-replacer/blob/master/LICENSE.md</url>
     </license>
   </licenses>
 
