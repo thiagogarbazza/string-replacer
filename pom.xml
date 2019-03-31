@@ -22,7 +22,7 @@
 
     <dependency.commons-lang.version>3.8.1</dependency.commons-lang.version>
     <dependency.junit.version>4.12</dependency.junit.version>
-    <dependency.lombok.version>1.18.4</dependency.lombok.version>
+    <dependency.lombok.version>1.18.6</dependency.lombok.version>
 
     <plugin.build-helper.version>3.0.0</plugin.build-helper.version>
     <plugin.deploy.version>2.8.2</plugin.deploy.version>
@@ -30,7 +30,7 @@
     <plugin.failsafe.version>2.22.1</plugin.failsafe.version>
     <plugin.gpg.version>1.6</plugin.gpg.version>
     <plugin.sonatype-staging.version>1.6.8</plugin.sonatype-staging.version>
-    <plugin.lombok.version>1.18.4.0</plugin.lombok.version>
+    <plugin.lombok.version>1.18.6.0</plugin.lombok.version>
     <plugin.release.version>2.5.3</plugin.release.version>
     <plugin.surefire.version>2.22.1</plugin.surefire.version>
 
