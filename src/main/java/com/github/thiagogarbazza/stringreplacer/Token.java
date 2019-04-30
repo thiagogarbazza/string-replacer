@@ -26,6 +26,6 @@ public class Token {
   public String getArg(final String argName, final String defaultValue) {
     final String argValue = getArg(argName);
 
-    return argValue == null ? defaultValue : argValue;
+    return argValue == null || "".equals(argValue.trim()) ? defaultValue : argValue;
   }
 }
