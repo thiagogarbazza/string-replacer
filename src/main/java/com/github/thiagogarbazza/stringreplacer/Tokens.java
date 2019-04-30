@@ -1,8 +1,5 @@
 package com.github.thiagogarbazza.stringreplacer;
 
-import lombok.Getter;
-import lombok.ToString;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -54,18 +51,10 @@ class Tokens {
     matcher.appendReplacement(buffer, Matcher.quoteReplacement(value));
   }
 
-  @Getter
-  @ToString(of = {"full"})
-  class Token {
+  class Token extends com.github.thiagogarbazza.stringreplacer.Token {
 
-    private final Map<String, String> args;
-    private final String full;
-    private final String name;
-
-    private Token(final String full, final String name, final Map<String, String> args) {
-      this.full = full;
-      this.name = name;
-      this.args = args;
+    public Token(final String full, final String name, final Map<String, String> args) {
+      super(full, name, args);
     }
 
     void setResult(String result) {

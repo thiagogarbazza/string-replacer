@@ -21,10 +21,10 @@ class StringReplacerImpl implements StringReplacer {
 
     while (tokens.hasNext()) {
       Tokens.Token token = tokens.next();
-      final Replacer replacer = replacers.find(token.getName(), token.getArgs(), data);
+      final Replacer replacer = replacers.find(token, data);
 
       if (replacer != null) {
-        final String result = replacer.toReplace(token.getArgs(), data);
+        final String result = replacer.toReplace(token, data);
         token.setResult(result);
       }
     }

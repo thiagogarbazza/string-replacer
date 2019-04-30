@@ -1,10 +1,8 @@
 package com.github.thiagogarbazza.stringreplacer;
 
-import java.util.Map;
-
 public interface Replacer<T> {
 
-  boolean fromToken(String token, Map<String, String> args, T data);
+  boolean fromToken(Token token, T data);
 
-  String toReplace(Map<String, String> args, T data);
+  String toReplace(Token token, T data);
 }
