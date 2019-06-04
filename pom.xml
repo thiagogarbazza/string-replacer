@@ -21,6 +21,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
 
     <dependency.commons-lang.version>3.8.1</dependency.commons-lang.version>
+    <dependency.cucumber.version>4.3.1</dependency.cucumber.version>
     <dependency.junit.version>4.12</dependency.junit.version>
     <dependency.lombok.version>1.18.6</dependency.lombok.version>
 
@@ -70,15 +71,27 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>${dependency.commons-lang.version}</version>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${dependency.cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>${dependency.cucumber.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${dependency.junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${dependency.commons-lang.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -153,6 +166,9 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>${plugin.failsafe.version}</version>
         <configuration>
+          <systemPropertyVariables>
+            <cucumber.options>--tags 'not @Ignore and not @ignore' --plugin pretty</cucumber.options>
+          </systemPropertyVariables>
           <includes>
             <include>**/*AT.java</include>
             <include>**/*AcceptanceTest.java</include>
